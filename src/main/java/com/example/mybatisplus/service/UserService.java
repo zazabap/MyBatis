@@ -1,8 +1,9 @@
 package com.example.mybatisplus.service;
 
-import com.example.mybatisplus.pojo.News;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.mybatisplus.pojo.User;
+
+import java.util.List;
 
 /**
  * @author shiwenan
@@ -10,5 +11,9 @@ import com.example.mybatisplus.pojo.User;
  * @createDate 2022-07-15 13:29:37
  */
 public interface UserService extends IService<User> {
+
+    List<User> findAll();
+    User find(User user);
+    User login(String name, String password);
 
 }

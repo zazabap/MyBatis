@@ -4,8 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mybatisplus.mapper.UserMapper">
 
-        <select id="selectMapById" resultType="map">
-            select id, name, email, password from user where id=#{id}
-        </select>
+    <update id="update">
+        UPDATE user SET name=#{user.name}, email=#{user.email}, password =#{user.password}
+    </update>
+    <delete id="delete">
+        DELETE FROM user WHERE id=#{user.id}
+    </delete>
+
+    <select id="selectMapById" resultType="map">
+        select id, name, email, password from user where id=#{id}
+    </select>
+
+
+
+<!--    <select id="login" resultMap="user">-->
+<!--        select * from user where name=#{name} and password=#{password}-->
+<!--    </select>-->
 
 </mapper>

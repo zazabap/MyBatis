@@ -2,6 +2,9 @@ package com.example.mybatisplus.mapper;
 
 import com.example.mybatisplus.pojo.Ad;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.Map;
 
 /**
 * @author shiwenan
@@ -10,6 +13,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity com.example.mybatisplus.pojo.Ad
 */
 public interface AdMapper extends BaseMapper<Ad> {
+
+    Map<String, Object> selectMapById(long id);
+    int insert(@Param("ad") Ad ad);
+    int update(@Param("ad") Ad ad);
+    int delete(@Param("ad") Ad ad);
 
 }
 

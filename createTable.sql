@@ -56,6 +56,12 @@ CREATE TABLE news(
     PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO news (id, title, author, content) values
+                                                (1, 'Tencent Create new products in field of finance', 'Liz Jar', 'Dummy1'),
+                                                (2, 'Microsoft moves business out of certain region', 'Beth Tank', 'Dummy2'),
+                                                (3, 'NTT collaborates with Softbank in field of IoT', 'NTT news', 'Dummy3'),
+                                                (4, 'Software companies giving up data protection right', 'Nikkei news', 'Dummy4');
+
 
 CREATE TABLE comment(
     uid INT,
@@ -67,6 +73,13 @@ CREATE TABLE comment(
     downvote INT,
     PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO comment (uid, nid, id, content) values
+                                                  (1, 1, 1, 'Big News Coming 1'),
+                                                  (1, 2, 2, 'Big News Coming 2'),
+                                                  (2, 2, 3, 'Big News Coming 3'),
+                                                  (3, 2, 4, 'Big News Coming 4');
 
 
 CREATE TABLE ad(
@@ -85,4 +98,8 @@ CREATE TABLE ad(
     PRIMARY KEY(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+INSERT INTO ad (id, title, investor, content) values
+                                                  (1, 'Buy Luna', 'Macau Casino 1', 'Dummy1'),
+                                                  (2, 'Buy Shiba', 'Macau Casino 2', 'Dummy2'),
+                                                  (3, 'Buy Doge', 'Macau Casino 3 Royal', 'Dummy3'),
+                                                  (4, 'Buy TSLA Stock', 'Macau Casino 4 Platinum', 'Dummy4');
