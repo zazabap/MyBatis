@@ -15,8 +15,6 @@ import java.util.Map;
 */
 public interface AdService extends IService<Ad> {
 
-    List<Comment> searchAllComments();
-
-
+    List<Ad> searchAllAds();
 
 }

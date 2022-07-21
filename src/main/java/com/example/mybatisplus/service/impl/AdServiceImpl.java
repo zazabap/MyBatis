@@ -6,6 +6,8 @@ import com.example.mybatisplus.service.AdService;
 import com.example.mybatisplus.mapper.AdMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
 * @author shiwenan
 * @description 针对表【ad】的数据库操作Service实现
@@ -15,6 +17,12 @@ import org.springframework.stereotype.Service;
 public class AdServiceImpl extends ServiceImpl<AdMapper, Ad>
     implements AdService{
 
+    private AdMapper adMapper;
+
+    @Override
+    public List<Ad> searchAllAds(){
+        return adMapper.selectList(null);
+    }
 }
 
 

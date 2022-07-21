@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisplus.mapper.NewsMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.mybatisplus.pojo.News">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="datetime" column="datetime" jdbcType="TIMESTAMP"/>
+            <result property="author" column="author" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="hitVol" column="hit_vol" jdbcType="INTEGER"/>
+            <result property="favoriteVol" column="favorite_vol" jdbcType="INTEGER"/>
+            <result property="forwardVol" column="forward_vol" jdbcType="INTEGER"/>
+            <result property="paidFlag" column="paid_flag" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,title,datetime,
+        author,content,hit_vol,
+        favorite_vol,forward_vol,paid_flag,
+        cover_pic
+    </sql>
+    <update id="update">
+    </update>
+    <delete id="delete">
+    </delete>
+    <select id="selectMapById" resultType="java.util.Map">
+    </select>
+</mapper>
