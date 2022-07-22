@@ -45,6 +45,25 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         return userMapper.selectOne(queryWrapper);
     }
 
+    @Override
+    public int insert(User user) {
+        return 0;
+    }
+
+    @Override
+    public void createUser(String name, String password, String email) {
+        User user = new User();
+        user.setName(name);
+        user.setEmail(email);
+        user.setPassword(password);
+        System.out.println("Create User");
+        int result = userMapper.insert(user);
+        System.out.println("=========================");
+        System.out.println("result: "+result);
+        System.out.println("id: "+ user.getId());
+        System.out.println("=========================");
+    }
+
     //    @Override
 //    public User getUserByName(String name) {
 //        QueryWrapper<User> queryWrapper = new QueryWrapper<>();

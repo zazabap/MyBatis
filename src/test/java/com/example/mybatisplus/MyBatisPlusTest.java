@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.crypto.KeyGenerator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,17 +65,32 @@ public class MyBatisPlusTest {
         testAdSelectList();
     }
 
+    // There is some bugs in mybatis
     @Test
     public void testInsert(){
         User user = new User();
-        user.setName("SweetTea");
-        user.setEmail("st@cern.ch");
-        user.setPassword("123456");
+//        KeyGenerator k = mappedState
+//
+        user.setId(46);
+        user.setName("SwTea");
+        user.setPhone("126789");
+        user.setEmail("st@cernch");
+        user.setPassword("1256");
         int result = userMapper.insert(user);
         System.out.println("=========================");
         System.out.println("result: "+result);
         System.out.println("id: "+ user.getId());
         System.out.println("=========================");
+
+        String name = "Lizz";
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+
+//        queryWrapper.select ("name","password" ,"email" );
+//        queryWrapper.inSql("name", "select * from user where name=#{"+name+"}");
+//        List<Map<String, Object>> maps = userMapper.Maps(queryWrapper);
+//        maps.forEach(System.out::println);
+//        User uu = userMapper.selectOne(queryWrapper);
+//        System.out.println(uu.getName());
     }
 
     @Test
@@ -83,7 +99,7 @@ public class MyBatisPlusTest {
         System.out.println("=========================");
         System.out.println("result: "+result);
         System.out.println("=========================");
-        testInsert();
+        //testInsert();
 
         Map<String, Object> map = new HashMap<>();
         map.put("name", "SweetTea");
@@ -92,7 +108,7 @@ public class MyBatisPlusTest {
         System.out.println("=========================");
         System.out.println("result: "+result);
         System.out.println("=========================");
-        testInsert();
+        //testInsert();
         // Through multiple ids to realize deletion
 //        List<Long> list = Arrays.asList(1L,2L,3L);
 //        int result = userTblMapper.deleteBatchIds(list);
@@ -186,6 +202,10 @@ public class MyBatisPlusTest {
         users.forEach(System.out::println);
         Map<String, Object> map1 = userMapper.selectMapById(1L);
         System.out.println(map1);
+    }
+
+    @Test
+    public void insertNews(){
 
     }
 

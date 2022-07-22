@@ -1,4 +1,11 @@
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 4197cf6adcf46baa56d8
+            clientSecret: 3cd5ef4c70931fbe330479a1a3055844981f204b
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver

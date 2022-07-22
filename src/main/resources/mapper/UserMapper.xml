@@ -15,9 +15,25 @@
         select id, name, email, password from user where id=#{id}
     </select>
 
+<!--    <select id="createUser">-->
+<!--        insert into user (name, email, password) values ( {#name}, {#email}, {#password})-->
+<!--    </select>-->
+
+<!--    <insert id="insert">-->
+<!--    </insert>-->
+<!--    <selectKey keyColumn="id" resultType="Long" keyProperty="id" order="AFTER">-->
+<!--        select last_insert_id()-->
+<!--    </selectKey>-->
+    <insert id="insert" >
+<!--        select * from user;-->
+        insert into user (id, name, email, password) values (
+        #{user.id}, #{user.name}, #{user.email}, #{user.password});
+<!--            INSERT INTO user (id, name, email, password) values-->
+<!--            (1, 'Liz', 'Liz@gg.com', '123456')-->
+    </insert>
 
 
-<!--    <select id="login" resultMap="user">-->
+    <!--    <select id="login" resultMap="user">-->
 <!--        select * from user where name=#{name} and password=#{password}-->
 <!--    </select>-->
 
